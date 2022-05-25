@@ -8,16 +8,13 @@ Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
 YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 LinkedIn Robson Vaamonde: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Data de criação: 23/01/2021
-Data de atualização: 24/03/2022
-Versão: 0.06
-Testado e homologado no Firewall NG UTM Netgate pfSense 2.4.x, 2.5.x e 2.6.x
+Data de atualização: 17/09/2021
+Versão: 0.05
+Testado e homologado no Firewall NG UTM Netgate pfSense 2.4.x e 2.5.x
 
-Atualização da versão do pfSense 2.6.0: https://docs.netgate.com/pfsense/en/latest/releases/22-01_2-6-0.html
 Atualização da versão do pfSense 2.5.2: https://docs.netgate.com/pfsense/en/latest/releases/2-5-2.html
 Versão anterior do pfSense 2.5.1: https://docs.netgate.com/pfsense/en/latest/releases/21-02-2_2-5-1.html
 Versão base do pfSense 2.5.0: https://docs.netgate.com/pfsense/en/latest/releases/2-5-0.html
-
-Migração para o pfSense Plus+ 22.01: https://docs.netgate.com/pfsense/en/latest/install/migrate-to-plus.html
 
 Opções do Console do pfSense: https://docs.netgate.com/pfsense/en/latest/config/console-menu.html
 
@@ -41,7 +38,7 @@ Opções do Console do Netgate pfSense
 	16) Restart PHP-FPM - reinicializar o serviço do PHP-FPM (FastCGI Process Manager) do WebConfigurator
 
 Primeira etapa: Endereçamento das Interfaces do pfSense
-01. Interface WAN: Padrão de configuração via DHCP (Rede do Laboratório: 10.26.X.X/24)
+01. Interface WAN: Padrão de configuração via DHCP
 02. Interface LAN: Padrão de configuração de Endereço IP Estático
 03. Endereço IPv4 Padrão da Interface de LAN do pfSense: 192.168.1.1/24
 
@@ -65,7 +62,7 @@ Terceira etapa: Configuração do Endereço de Rede Local e DHCP Server
 	2) Set interface(s) IP address
 		Enter the number of the interface you wish to configure: 2 <Enter>
 		Enter the new LAN IPv4 address.
-			> 172.16.??.254 <Enter>
+			> 172.16.1.254 <Enter>
 		Enter the new LAN IPv4 subnet.
 			> 24 <Enter>
 		For a WAN, enter the new LAN IPv4 upstream gateway address
@@ -74,8 +71,8 @@ Terceira etapa: Configuração do Endereço de Rede Local e DHCP Server
 		Enter the new LAN IPv6 address.
 			> <Enter>
 		Do you want to enable the DHCP server on LAN? (y/n): y <Enter>
-		Enter the start address of the IPv4 client address range: 172.16.??.100 <Enter>
-		Enter the end address fo the IPv4 client address range: 172.16.??.150 <Enter>
+		Enter the start address of the IPv4 client address range: 172.16.1.100 <Enter>
+		Enter the end address fo the IPv4 client address range: 172.16.1.150 <Enter>
 		Do you want to revert to HTTP as the WebConfigurator protocol? (y/n): y <Enter>	
 		Press <Enter> to continue.
 

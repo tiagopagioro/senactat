@@ -133,7 +133,7 @@ System
 		CAs
 			ADD
 				Create / Edit CA
-					Descriptive name: SEU_DOMINIO
+					Descriptive name: BoraParaPratica
 					Method: Create an internal Certificate Authority
 					Trust Store: (default)
 					Randomize Serial: (default)
@@ -142,7 +142,7 @@ System
 					Key length (bits): 2048
 					Digest Algorithm: sha256
 					Lifetime (days): 3650
-					Common Name: SEU_DOMINIO-ca
+					Common Name: internal-ca
 					Country Code: BR
 					Sate or Province: Guarulhos
 					City: Sao Paulo
@@ -151,7 +151,7 @@ System
 			Save
 			
 			Export CA
-				Salvar Arquivo: SEU_DOMINIO.crt
+				Salvar Arquivo: BoraParaPratica.crt
 		
 		Certificates
 			Add/Sign
@@ -164,18 +164,18 @@ System
 					Key length: 2048
 					Digest Algorithm: sha256
 					Lifetime (days): 3650
-					Common Name: firewall.SEU_DOMINIO.intra 
+					Common Name: ptispo01fw01.pti.intra 
 					Country Code: BR
-					State or Province: Sao Paulo
+					State or Province: Guarulhos
 					City: Sao Paulo
-					Organization: Sua Empresa
-					Organization Unit: Matriz de Sua Empresa
+					Organization: Bora para Pratica
+					Organization Unit: Matriz de Bora para Pratica
 				Certificate Attributes
 					Certificate Type: Server Certificate
 					Alternative Names:
-						IP Address: 172.16.??.254 +Add
-						FQDN or Hostname: firewall +Add
-						FQDN or Hostname: firewall.SEU_DOMINIO.intra
+						IP Address: 172.16.1.254
+						FQDN or Hostname: ptispo01fw01
+						FQDN or Hostname: ptispo01fw01.pti.intra
 			Save
 
 Configuração do suporte ao HTTPS do pfSense
@@ -194,7 +194,7 @@ Firefox
 				Certificados
 					Ver Certificados...
 						Autoridades
-							Importar: SEU_DOMINIO.crt <Abrir>
+							Importar: BoraParaPratica.crt <Abrir>
 								Confiar nesta CA para identificar sites (yes)
 								Confiar nesta CA para identificar usuários de e-mail (yes)
 							<Ver>
@@ -205,7 +205,7 @@ Google Chrome
 	Digite a URL: chrome://settings/certificates
 		Autoridade
 			Importar
-				SEU_DOMINIO.crt <Abrir>
+				BoraParaPratica.crt <Abrir>
 					Confiar neste certificado para identificar sites (yes)
 					Confiar neste certificado para identificar usuários de e-mail (yes)
 					Confiar neste certificado para identificar fabricantes de software (yes)
@@ -213,7 +213,7 @@ Google Chrome
 	Digite a URL: chrome://restart
 
 Instalação do CA (Certificate Authority) no Windows
-SEU_DOMINIO.crt (clicar duas vezes em cima do certificado)
+BoraParaPratica.crt (clicar duas vezes em cima do certificado)
 	Abrir
 		Certificado
 			Geral
@@ -231,12 +231,12 @@ Pesquisa do Windows
 	Gerenciar Certificados de Computador <Sim>
 		Autoridades de Certificação Raiz Confiáveis
 			Certificados
-				SEU_DOMINIO-ca
+				internal-ca
 
 Instalação do CA (Certificate Authority) no Linux
-SEU_DOMINIO.crt
+BoraParaPratica.crt
 		Abrir como Root 
-			Copia: SEU_DOMINIO.crt
+			Copia: BoraParaPratica.crt
 			Colar: /usr/local/share/ca-certificates
 		Terminal
 			sudo update-ca-certificates

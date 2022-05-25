@@ -7,17 +7,14 @@ Facebook Bora para Prática: https://www.facebook.com/BoraParaPratica
 Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
 YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 LinkedIn Robson Vaamonde: https://www.linkedin.com/in/robson-vaamonde-0b029028/
-Data de criação: 15/02/2022
-Data de atualização: 15/02/2022
-Versão: 0.01
+Data de criação: 24/03/2021
+Data de atualização: 28/01/2022
+Versão: 0.03
 Testado e homologado no Firewall NG UTM Netgate pfSense 2.5.x
 
-Atualização da versão do pfSense 2.6.0: https://docs.netgate.com/pfsense/en/latest/releases/22-01_2-6-0.html
-Versão anterior do pfSense 2.5.2: https://docs.netgate.com/pfsense/en/latest/releases/2-5-2.html
+Atualização da versão do pfSense 2.5.2: https://docs.netgate.com/pfsense/en/latest/releases/2-5-2.html
 Versão anterior do pfSense 2.5.1: https://docs.netgate.com/pfsense/en/latest/releases/21-02-2_2-5-1.html
 Versão base do pfSense 2.5.0: https://docs.netgate.com/pfsense/en/latest/releases/2-5-0.html
-
-Migração para o pfSense Plus+ 22.01: https://docs.netgate.com/pfsense/en/latest/install/migrate-to-plus.html
 
 Hardware Mínimo do pfSense: https://docs.netgate.com/pfsense/en/latest/hardware/minimum-requirements.html
 Seleção do Hardware do pfSense: https://docs.netgate.com/pfsense/en/latest/hardware/selection.html
@@ -98,10 +95,10 @@ Terceira etapa: Instalação do pfSense (localizar a ISO descompactada)
 	Selecionar um arquivo de disco óptico virtual
 03. Seletor de Discos Ópticos
 	Acrescentar
-	Selecione o arquivo de disco óptico virtual: pfSense-CE-2.6.0-RELEASE-amd64.iso
+	Selecione o arquivo de disco óptico virtual: pfSense-CE-2.5.2-RELEASE-amd64.iso
 	<Abrir>
 04. Not Attached
-	Selecionar: pfSense-CE-2.6.0-RELEASE-amd64.iso
+	Selecionar: pfSense-CE-2.5.2-RELEASE-amd64.iso
 	<Escolher>
 <Iniciar>
 
@@ -113,17 +110,17 @@ Terceira etapa: Instalação do pfSense (localizar a ISO descompactada)
 	Brazilian (accent keys) - <Enter>
 	Continue with br.kdb keymap - <Enter>
 04. Partitioning
-	Auto (ZFS) Guided Root-on-ZFS - <Enter>
+	Auto (ZFS) - <Enter>
 	04.1 Configure Options:
 		>>> Install (Proceed with Installation) - <Enter>
 		T Pool Type/Disks:		stripe: 0 disks
 		- Rescan Devices		*
 		- Disk Info 			*
-		N Pool Name				pfsense
+		N Pool Name				zroot
 		4 Force 4K Sectores?	YES
 		E Encrypt Disks?		NO
 		P Partition Scheme		GPT (BIOS)
-		S Swap Size				1g
+		S Swap Size				2g
 		M Mirror Swap?			NO
 		W Encrypt Swap?			NO
 	04.2 Select Virtual Device type:
@@ -131,8 +128,8 @@ Terceira etapa: Instalação do pfSense (localizar a ISO descompactada)
 	04.3 Hard Disk Selection
 		[*] ada0 VBOX HARDDISK - <Space-Bar> - <Enter>
 	04.4 Last Chance! - <Yes> - <Enter>
-05. Manual Configuration: <No> - <Enter>
-06. Complete: <Reboot> - <Enter>
+05. Manual Configuration: No - <Enter>
+06. Complete: Reboot - <Enter>
 
 Observação: No Oracle VirtualBOX existe uma falha onde o CD-Room do pfSense não é ejetado 
 no final da Instalação, sendo necessário desmontar o CD-Room e rebotar a máquina virtual.

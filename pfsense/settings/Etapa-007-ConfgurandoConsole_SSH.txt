@@ -8,34 +8,25 @@ Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
 YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 LinkedIn Robson Vaamonde: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Data de criação: 23/01/2021
-Data de atualização: 24/03/2022
-Versão: 0.09
-Testado e homologado no Firewall NG UTM Netgate pfSense 2.4.x, 2.5.x e 2.6.x
+Data de atualização: 31/01/2022
+Versão: 0.08
+Testado e homologado no Firewall NG UTM Netgate pfSense 2.4.x e 2.5.x
 
-Atualização da versão do pfSense 2.6.0: https://docs.netgate.com/pfsense/en/latest/releases/22-01_2-6-0.html
-Versão anterior do pfSense 2.5.2: https://docs.netgate.com/pfsense/en/latest/releases/2-5-2.html
+Atualização da versão do pfSense 2.5.2: https://docs.netgate.com/pfsense/en/latest/releases/2-5-2.html
 Versão anterior do pfSense 2.5.1: https://docs.netgate.com/pfsense/en/latest/releases/21-02-2_2-5-1.html
 Versão base do pfSense 2.5.0: https://docs.netgate.com/pfsense/en/latest/releases/2-5-0.html
 
-Migração para o pfSense Plus+ 22.01: https://docs.netgate.com/pfsense/en/latest/install/migrate-to-plus.html
-
 Conexão via Console do pfSense: https://docs.netgate.com/pfsense/en/latest/hardware/connect-to-console.html
 Conexão via SSH do pfSense: https://docs.netgate.com/pfsense/en/latest/recipes/ssh-access.html#enable-ssh-via-gui
-
-
-Instalando os software SetSerial e TTYLog para o gerenciamento da Porta Serial do VirtualBOX
-Terminal 
-	sudo apt update
-	sudo apt install setserial ttylog
 
 Configuração da Porta Serial no Oracle VirtualBOX
 Configurações
 	Portas Seriais
 		Porta 1
 			Habilitar Porta Serial (yes)
-			Número da Porta: COM1 - IRQ: 4 Endereço I/O: 0x3F8
+			Número da Porta: COM3 - IRQ: 4 Endereço I/O: 0x3E8
 			Modo da Porta: Dispositivo no Hospedeiro
-			Caminho/Endereço: /dev/ttyS2 (Linux) ou COM3 (Windows)
+			Caminho/Endereço: /dev/ttyS0
 
 Configuração do Serviço do SSH (Secure Shell) do pfSense
 System
@@ -67,9 +58,9 @@ System
 
 Acessando remotamente o pfSense utilizando o Protocolo SSH
 Terminal
-	ssh admin@172.16.??.254
+	ssh admin@172.16.1.254
 	Are you sure want to continue connecting? (yes)
-	Password: 123@senac
+	Password: pti@2018
 	0) Logout (SSH only)
 
 Instalando os software PuTTY e FileZilla para o gerenciamento do pfSense
@@ -80,16 +71,16 @@ Terminal
 Geração da Chave Pública do SSH para autenticação do pfSense
 Terminal
 	ssh-keygen
-	Enter file in which to save the key (/home/seu_usuario/.ssh/id_rsa): /home/seu_usuario/.ssh/pfsense <Enter>
+	Enter file in which to save the key (/home/vaamonde/.ssh/id_rsa): <Enter>
 	Enter passphrase (empty for no passphrase): <Enter>
 	Enter same passphrase again: <Enter>
 
 	Localização padrão das Chaves Públicas e Privadas do SSH
-	cd /home/seu_usuario/.ssh/
+	cd /home/vaamonde/.ssh/
 	ls -lh
 
 	Verificando o conteúdo da Chave Pública do SSH
-	cat pfsense.pub
+	cat id_rsa.pub
 
 Configuração da Chave Pública do SSH no usuário Admin do pfSense
 System

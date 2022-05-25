@@ -8,16 +8,13 @@ Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
 YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 LinkedIn Robson Vaamonde: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Data de criação: 25/08/2021
-Data de atualização: 24/03/2022
-Versão: 0.06
-Testado e homologado no Firewall NG UTM Netgate pfSense 2.4.x, 2.5.x e 2.6.x
+Data de atualização: 03/10/2021
+Versão: 0.04
+Testado e homologado no Firewall NG UTM Netgate pfSense 2.4.x e 2.5.x
 
-Atualização da versão do pfSense 2.6.0: https://docs.netgate.com/pfsense/en/latest/releases/22-01_2-6-0.html
-Versão anterior do pfSense 2.5.2: https://docs.netgate.com/pfsense/en/latest/releases/2-5-2.html
+Atualização da versão do pfSense 2.5.2: https://docs.netgate.com/pfsense/en/latest/releases/2-5-2.html
 Versão anterior do pfSense 2.5.1: https://docs.netgate.com/pfsense/en/latest/releases/21-02-2_2-5-1.html
 Versão base do pfSense 2.5.0: https://docs.netgate.com/pfsense/en/latest/releases/2-5-0.html
-
-Migração para o pfSense Plus+ 22.01: https://docs.netgate.com/pfsense/en/latest/install/migrate-to-plus.html
 
 Introdução à regras de firewall: https://docs.netgate.com/pfsense/en/latest/firewall/index.html
 Configuração das Regras de Firewall: https://docs.netgate.com/pfsense/en/latest/firewall/configure.html
@@ -117,7 +114,15 @@ Firewall
 			Liberação do acesso remoto do WebGui e Console do pfSense
 		Save
 
-Gerando a Chave Pública do SSH para a autenticação do usuário SEU_USUÁRIO no pfSense
+Gerando a Chave Pública do SSH para a autenticação do usuário vaamonde no pfSense
+Terminal
+	ssh-keygen
+	Enter file in which to save the key (/home/vaamonde/.ssh/id_rsa): /home/vaamonde/.ssh/id_rsa_pfsense <Enter>
+	Enter passphrase (empty for no passphrase): <Enter>
+	Enter same passphrase again: <Enter>
+		cd /home/vaamonde/.ssh/
+		ls -lh
+		cat id_rsa_pfsense.pub
 
 Criação do usuário de acesso remoto no pfSense
 System
@@ -127,13 +132,13 @@ System
 				User Properties
 					Defined USER 
 					Disable: OFF
-					Username: SEU_USUÁRIO
-					Password: 123@senac
-					Confirm Password: 123@senac
+					Username: robson
+					Password: pti@2018
+					Confirm Password: pti@2018
 					Full name: Robson Vaamonde
 					Expiration date: OFF
 					Custom Settings: OFF
-					Group membership: Member of: SEU_DOMINIO
+					Group membership: Member of: boraparapratica
 					Certificate: OFF
 				Keys
 					Authorized SSH Keys: (copiar e colocar a chave RSA do SSH)
@@ -142,4 +147,4 @@ System
 
 Testando o acesso remoto ao pfSense
 	Navegador: https://Endereço_IPv4_WAN:10443
-	SSH: ssh -p 10222 SEU_USUÁRIO@Endereço_IPv4_WAN (10.26.x.x)
+	SSH: ssh -p 10222 usuário@Endereço_IPv4_WAN

@@ -8,16 +8,15 @@ Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
 YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 LinkedIn Robson Vaamonde: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Data de criação: 18/08/2021
-Data de atualização: 24/03/2022
-Versão: 0.06
-Testado e homologado no Firewall NG UTM Netgate pfSense 2.4.x, 2.5.x e 2.6.x
+Data de atualização: 10/09/2021
+Versão: 0.01
+Testado e homologado no Firewall NG UTM Netgate pfSense 2.4.x e 2.5.x
 
-Atualização da versão do pfSense 2.6.0: https://docs.netgate.com/pfsense/en/latest/releases/22-01_2-6-0.html
-Versão anterior do pfSense 2.5.2: https://docs.netgate.com/pfsense/en/latest/releases/2-5-2.html
+Atualização da versão do pfSense 2.5.2: https://docs.netgate.com/pfsense/en/latest/releases/2-5-2.html
 Versão anterior do pfSense 2.5.1: https://docs.netgate.com/pfsense/en/latest/releases/21-02-2_2-5-1.html
 Versão base do pfSense 2.5.0: https://docs.netgate.com/pfsense/en/latest/releases/2-5-0.html
 
-Migração para o pfSense Plus+ 22.01: https://docs.netgate.com/pfsense/en/latest/install/migrate-to-plus.html
+Link Oficial do pfSense: https://docs.netgate.com/pfsense/en/latest/install/upgrade-guide.html
 
 Criação de Apelidos: https://docs.netgate.com/pfsense/en/latest/firewall/aliases.html
 NAT Encaminhamento de Portas: https://docs.netgate.com/pfsense/en/latest/nat/port-forwards.html
@@ -29,13 +28,13 @@ Firewall
 		IP
 			+ADD
 				Properties
-					Name: wsSEU_NOME
-					Description: Servidor Webserver Ubuntu
+					Name: ucsunivention
+					Description: Servidor UCS Univention DC-01
 					Type: Host(s)
 				Host(s)
-					IP or FQDN: 172.16.??.20 - Description: IP Webserver Ubuntu
-					IP or FQDN: wsSEU_NOME  - Description: Hostname Webserver Ubuntu
-					IP or FQDN: wsSEU_NOME.SEU_DOMÍNIO.intra  - Description: FQDN Webserver Ubuntu
+					IP or FQDN: 172.16.1.10 - Description: IP UCS Core Free
+					IP or FQDN: ptispo01dc01  - Description: Hostname UCS Core Free
+					IP or FQDN: ptispo01dc01.pti.intra  - Description: FQDN UCS Core Free
 			Save
 	Apply Changes
 
@@ -61,11 +60,11 @@ Firewall
 						Custom: Default
 					Redirect target IP:
 						Type: Single host
-						Address: webserver
+						Address: ucsunivention
 					Redirect target port: 
 						Port: SSH
 						Custom: Default
-					Description: Redirecionamento da Porta 22 SSH do Webserver Ubuntu
+					Description: Redirecionamento da Porta 22 SSH do UCS Univention
 					No XMLRPC Sync: Off
 					NAT reflection: Use system default
 					Filter rule association: Add association filter rule
@@ -73,7 +72,7 @@ Firewall
 		Apply Changes
 
 		+Separator
-			Enter a description: Regras de NAT do Servidor Ubuntu - Color: Blue
+			Enter a description: Regras de NAT do Servidor UCS Univention - Color: Blue
 		Save
 
 Configurando as regras de Firewall na Interface WAN do pfSense
@@ -83,10 +82,10 @@ Firewall
 			Edit
 				Extra Options
 					Log: ON
-					Description: NAT Redirecionamento da Porta 22 SSH do Webserver Ubuntu
+					Description: NAT Redirecionamento da Porta 22 SSH do UCS Univention
 			Save
 		Apply Changes
 		
 		+Separator
-				Enter a description: Regras de NAT do Servidor Ubuntu - Color: Blue
+				Enter a description: Regras de NAT do Servidor UCS Univention - Color: Blue
 		Save

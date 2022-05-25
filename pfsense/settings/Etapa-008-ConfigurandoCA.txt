@@ -8,16 +8,13 @@ Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem
 YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica
 LinkedIn Robson Vaamonde: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Data de criação: 23/01/2021
-Data de atualização: 24/03/2022
-Versão: 0.09
-Testado e homologado no Firewall NG UTM Netgate pfSense 2.4.x, 2.5.x e 2.6.x
+Data de atualização: 17/09/2021
+Versão: 0.08
+Testado e homologado no Firewall NG UTM Netgate pfSense 2.4.x e 2.5.x
 
-Atualização da versão do pfSense 2.6.0: https://docs.netgate.com/pfsense/en/latest/releases/22-01_2-6-0.html
-Versão anterior do pfSense 2.5.2: https://docs.netgate.com/pfsense/en/latest/releases/2-5-2.html
+Atualização da versão do pfSense 2.5.2: https://docs.netgate.com/pfsense/en/latest/releases/2-5-2.html
 Versão anterior do pfSense 2.5.1: https://docs.netgate.com/pfsense/en/latest/releases/21-02-2_2-5-1.html
 Versão base do pfSense 2.5.0: https://docs.netgate.com/pfsense/en/latest/releases/2-5-0.html
-
-Migração para o pfSense Plus+ 22.01: https://docs.netgate.com/pfsense/en/latest/install/migrate-to-plus.html
 
 Gerenciamento de autoridade de certificação do pfSense: https://docs.netgate.com/pfsense/en/latest/certificates/ca.html
 CA do pfSense: https://docs.netgate.com/pfsense/en/latest/certificates/index.html
@@ -29,7 +26,7 @@ System
 		CAs
 			+ADD
 				Create / Edit CA
-					Descriptive name: SEU_DOMINIO
+					Descriptive name: BoraParaPratica
 					Method: Create an internal Certificate Authority
 					Trust Store: (default)
 					Randomize Serial: (default)
@@ -38,21 +35,22 @@ System
 					Key length (bits): 2048
 					Digest Algorithm: sha256
 					Lifetime (days): 3650
-					Common Name: SEU_DOMINIO-ca
+					Common Name: internal-ca
 					Country Code: BR
-					Sate or Province: Sao Paulo
+					Sate or Province: Guarulhos
 					City: Sao Paulo
-					Organization: Sua Empresa
-					Organizational Unit: Matriz Sua Empresa
+					Organization: Bora para Pratica
+					Organizational Unit: Matriz Bora para Pratica
 			Save
 
-Exportando a CA do SEU_DOMINIO do pfSense
+Exportando a CA do BoraParaPratica do pfSense
 System
 	Cert. Manager
 		CAs
-		SEU_DOMINIO
+		BoraParaPratica
 			Export CA
-				Salvar Arquivo: SEU_DOMINIO.crt
+				Salvar Arquivo: BoraParaPratica.crt
+
 
 Configuração do Certificado SSL de Serviços do pfSense
 System
@@ -63,23 +61,23 @@ System
 					Method: Create an internal Certificate
 					Descriptive name: Certificado do pfSense
 				Internal Certificate 
-					Certificate authority: SEU_DOMINIO
+					Certificate authority: BoraParaPratica
 					Key type: RSA
 					Key length: 2048
 					Digest Algorithm: sha256
 					Lifetime (days): 3650
-					Common Name: fwSEU_NOME.SEU_DOMINIO.intra 
+					Common Name: ptispo01fw01.pti.intra 
 					Country Code: BR
-					State or Province: Sao Paulo
+					State or Province: Guarulhos
 					City: Sao Paulo
-					Organization: Sua Empresa
-					Organization Unit: Matriz de Sua Empresa
+					Organization: Bora para Pratica
+					Organization Unit: Matriz de Bora para Pratica
 				Certificate Attributes
 					Certificate Type: Server Certificate
 					Alternative Names:
-						IP Address: 172.16.??.254 +Add
-						FQDN or Hostname: fwSEU_NOME +Add
-						FQDN or Hostname: fwSEU_NOME.SEU_DOMINIO.intra
+						IP Address: 172.16.1.254 +Add
+						FQDN or Hostname: ptispo01fw01 +Add
+						FQDN or Hostname: ptispo01fw01.pti.intra
 			Save
 
 Configurando o Suporte ao HTTPS do pfSense
@@ -98,7 +96,7 @@ Firefox
 				Certificados
 					Ver Certificados...
 						Autoridades
-							Importar: SEU_DOMINIO.crt <Abrir>
+							Importar: BoraParaPratica.crt <Abrir>
 								Confiar nesta CA para identificar sites (yes)
 								Confiar nesta CA para identificar usuários de e-mail (yes)
 							<Ver>
@@ -109,7 +107,7 @@ Google Chrome
 	Digite a URL: chrome://settings/certificates
 		Autoridade
 			Importar
-				SEU_DOMINIO.crt <Abrir>
+				BoraParaPratica.crt <Abrir>
 					Confiar neste certificado para identificar sites (yes)
 					Confiar neste certificado para identificar usuários de e-mail (yes)
 					Confiar neste certificado para identificar fabricantes de software (yes)
@@ -117,7 +115,7 @@ Google Chrome
 	Digite a URL: chrome://restart
 
 Instalação do CA (Certificate Authority) no Windows
-SEU_DOMINIO.crt (clicar duas vezes em cima do certificado)
+BoraParaPratica.crt (clicar duas vezes em cima do certificado)
 	Abrir
 		Certificado
 			Geral
@@ -135,12 +133,12 @@ Pesquisa do Windows
 	Gerenciar Certificados de Computador <Sim>
 		Autoridades de Certificação Raiz Confiáveis
 			Certificados
-				SEU_DOMINIO-ca
+				internal-ca
 
 Instalação do CA (Certificate Authority) no Linux
-SEU_DOMINIO.crt
+BoraParaPratica.crt
 		Abrir como Root 
-			Copia: SEU_DOMINIO.crt
+			Copia: BoraParaPratica.crt
 			Colar: /usr/local/share/ca-certificates
 		Terminal
 			sudo update-ca-certificates

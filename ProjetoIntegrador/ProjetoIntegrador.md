@@ -58,6 +58,6 @@ Material de apoio: https://github.com/vaamonde/senactat/blob/main/pfsense/settin
 Material de apoio: https://github.com/vaamonde/senactat/blob/main/pfsense/settings/Etapa-019-ConfiguracoesUsuariosGrupos.txt<br>
 Material de apoio: https://github.com/vaamonde/senactat/blob/main/pfsense/settings/Etapa-020-ConfiguracoesOpenVPN-Matriz.txt
 
-#14_ Configuração do Proxy com suporte a Interceptação HTTPS
+#14_ Configuração do Proxy com suporte a Interceptação HTTPS<br>
 Material de apoio: https://github.com/vaamonde/senactat/blob/main/pfsense/settings/Etapa-098-ConfigurandoProxySquid.txt<br>
 Material de apoio: https://github.com/vaamonde/senactat/blob/main/pfsense/settings/Etapa-099-ConfigurandoLightSquid.txt

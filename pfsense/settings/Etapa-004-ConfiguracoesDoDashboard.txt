@@ -49,11 +49,13 @@ System
 Configuração do Dashboard do pfSense
 Dashboard
 	Available Widgest
-		#Configuração dos Widgest Lado Esquerdo5
+		#Configuração dos Widgest Lado Esquerdo
 				New pictures: image.png
 				(OBSERVAÇÃO: Caso a imagem não seja compatível, um erro de restoure será apresentado)
 				Save
 			System Information: ON - Left-02
+			Disks - Left-03
+			ZFS - Left-04
 		#Configuração dos Widgest Centro
 			Interfaces: ON - Center-01
 			Gateways: ON - Center-02
@@ -68,7 +70,7 @@ Dashboard
 			Firewall Logs: ON - Right-05
 				Edit
 				Widgest: Firewall Logs 
-				Number of entries: 15
+				Number of entries: 20
 				Filter actions: ON Pass, ON Block and ON Reject
 				Filter interface: ALL 
 				Update interval: 1 Seconds
